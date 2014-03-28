@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
   before_action :find_ticket, only: [:show, :edit, :update, :destroy, :done]
 
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.all.paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
@@ -24,7 +24,7 @@ class TicketsController < ApplicationController
 
   def search
     search_condition = "%" + params[:term] + "%"
-    @tickets = Ticket.where(["name like? OR description like? OR email like?", search_condition, search_condition, search_condition ])
+    @tickets = Ticket.where(["name like? OR description like? OR email like?", search_condition, search_condition, search_condition ]).paginate(:page => params[:page], :per_page => 5)
     render :index
   end
 
@@ -70,6 +70,10 @@ class TicketsController < ApplicationController
 
   def find_ticket
     @ticket = Ticket.find params[:id]
+  end
+
+  def paginate
+    
   end
 
 end

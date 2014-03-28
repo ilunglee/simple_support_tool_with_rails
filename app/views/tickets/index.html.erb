@@ -1,7 +1,7 @@
 <h1>All Support Requests</h1>
 <div class="form-group">
   <%= form_tag(search_tickets_path, method: "get") do %>
-    <%= text_field_tag :term, nil, class: "form-control"%>
+    <%= text_field_tag :term, params[:term], class: "form-control"%>
     <%= submit_tag "Search", class: "btn btn-success", id: "search-submit" %>
   <% end %>
 </div>
@@ -28,3 +28,5 @@
     </tr>
   <%end%>
 </table>
+
+<%= will_paginate @posts %>
