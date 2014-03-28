@@ -1,0 +1,19 @@
+// Place all the styles related to the tickets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+header{ margin-top: 20px; }
+
+
+.field_with_errors .form-control{ 
+  background-color: #f2dede;
+}
+
+#flash{
+  height: auto;
+}
+
+#flash .container-fluid{ padding-top: 10px; padding-bottom: 10px; }
+
+.action .btn{ float: right; margin-left: 5px;}

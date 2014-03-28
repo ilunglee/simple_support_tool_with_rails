@@ -1,0 +1,24 @@
+<h1>All Support Requests</h1>
+
+<table class="table table-hover">
+    <tr>
+      <th class="col-md-2">Name</th>
+      <th class="col-md-2">Email</th>
+      <th class="col-md-2">Department</th>
+      <th class="col-md-2">Message</th>
+      <th class="col-md-4">Actions</th>
+    </tr>
+  <% @tickets.each do |ticket| %>
+    <tr>
+      <td class="col-md-2"><%= link_to ticket.name, ticket %></td>
+      <td class="col-md-2"><%= link_to ticket.email, "mailto:#{ticket.email}" %></td>
+      <td class="col-md-2"><%= ticket.department %></td>
+      <td class="col-md-2"><%= ticket.description %></td>
+      <td class="col-md-4 action">
+        <%= button_to "Delete", ticket, method: :delete, class: "btn btn-default" %>
+        <%= link_to "Edit", edit_ticket_path(ticket.id), class: "btn btn-default" %>
+        <%= button_to ( ticket.status ? "Done": "Not Done"), done_ticket_path(ticket.id), method: :patch, class: "btn btn-default" %>
+      </td>
+    </tr>
+  <%end%>
+</table>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SupportTool</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="flash" class="bg-warning">
+    <% if flash[:error] || flash[:notice] %>
+    <div class="container-fluid">
+      <%= flash[:error] || flash[:notice] %>
+    </div>
+    <% end %>
+</div>
+<header>
+  <div class="container-fluid">
+    <%= link_to "Home", tickets_path, class: "btn btn-default" %>
+    <%= link_to "New", new_ticket_path, class: "btn btn-default" %>
+  </div>
+</header>
+<div class="container">
+  <%= yield %>
+</div>
+</body>
+</html>

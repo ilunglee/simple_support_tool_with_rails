@@ -1,0 +1,32 @@
+<% if @ticket.errors.any? %>
+  <ul>
+  <% @ticket.errors.full_messages.each do |message| %>
+    <li class="text-danger"><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+<%= form_for @ticket do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :department, "Sales" %>
+    <%= f.radio_button :department, "Sales" %>
+    <%= f.label :department, "Marketing" %>
+    <%= f.radio_button :department, "Marketing" %>
+    <%= f.label :department, "Technical" %>
+    <%= f.radio_button :department, "Technical" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control", rows: "6", style: "resize: none;" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Create", class: "btn btn-success" %>
+  </div>
+<% end %>
