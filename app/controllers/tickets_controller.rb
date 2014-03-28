@@ -22,6 +22,12 @@ class TicketsController < ApplicationController
 
   end
 
+  def search
+    search_condition = "%" + params[:term] + "%"
+    @tickets = Ticket.where(["name like? OR description like? OR email like?", search_condition, search_condition, search_condition ])
+    render :index
+  end
+
   def show
   end
 

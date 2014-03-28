@@ -1,6 +1,7 @@
 SupportTool::Application.routes.draw do
   resources :tickets do
     patch :done, on: :member
+    get :search, on: :collection
   end
 
   root "tickets#index"

@@ -10,9 +10,14 @@ header{ margin-top: 20px; }
   background-color: #f2dede;
 }
 
+#search-form{ margin-bottom: 10px; height: auto; width: 100%;}
+
 #flash{
   height: auto;
 }
+
+#term{ width: 300px; margin-right: 10px; float: left;}
+
 
 #flash .container-fluid{ padding-top: 10px; padding-bottom: 10px; }
 

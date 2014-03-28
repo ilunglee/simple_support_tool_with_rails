@@ -1,4 +1,10 @@
 <h1>All Support Requests</h1>
+<div class="form-group">
+  <%= form_tag(search_tickets_path, method: "get") do %>
+    <%= text_field_tag :term, nil, class: "form-control"%>
+    <%= submit_tag "Search", class: "btn btn-success", id: "search-submit" %>
+  <% end %>
+</div>
 
 <table class="table table-hover">
     <tr>
