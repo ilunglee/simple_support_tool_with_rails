@@ -5,7 +5,7 @@ gem 'rails', '4.0.4'
 gem 'bootstrap-sass', '~> 3.1.1.0'
 gem 'thin'
 gem 'quiet_assets'
-gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 
 group :development do
   gem "hirb"
